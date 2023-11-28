@@ -22,5 +22,12 @@ public class App {
         Screening screening_sale = new Screening(avatar, 2, LocalDateTime.of(2021, 7, 12, 10, 0));
         System.out.println(avatar.calculateMovieFee(screening));
         System.out.println(avatar.calculateMovieFee(screening_sale));
+
+        Movie starWars = new Movie("스타워즈",
+                Duration.ofMinutes(210),
+                Money.wons(10000),
+                new NoneDiscountPolicy());
+        Screening screening_starWars = new Screening(starWars, 2, LocalDateTime.of(2021, 7, 12, 9, 0));
+        System.out.println(starWars.calculateMovieFee(screening_starWars));
     }
 }
